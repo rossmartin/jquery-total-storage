@@ -82,6 +82,10 @@
 	$.totalStorage.deleteItem = function(key){
 		return $.totalStorage.impl.deleteItem(key);
 	};
+	
+	$.totalStorage.removeAll = function(){
+		return $.totalStorage.impl.removeAll();
+	};
 
 	/* Object to hold all methods: public and private */
 
@@ -152,6 +156,9 @@
 				}
 			}
 			return items;
+		},
+		removeAll: function(){
+			ls.clear();
 		},
 		parseResult: function(res){
 			var ret;
