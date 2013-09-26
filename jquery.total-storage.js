@@ -158,7 +158,20 @@
 			return items;
 		},
 		removeAll: function(){
-			ls.clear();
+			if (!supported){
+				try {
+					var pairs = document.cookie.split(";");
+					for (var i = 0; i<pairs.length; i++){
+						var pair = pairs[i].split('=');
+						var key = pair[0];
+						$.cookie(key, null);
+					}
+				} catch(e){
+					return null;
+				}
+			} else {
+				ls.clear();
+			}
 		},
 		parseResult: function(res){
 			var ret;
