@@ -27,6 +27,10 @@ Dead-Simple local storage for every browser and device
 		//to return:
 		$.totalStorage('people');
 
+ * Clear local storage
+ 
+		$.totalStorage.removeAll();
+
 ## The stats:
  * @name $.totalStorage
  * @cat Plugins/Cookie
